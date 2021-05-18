@@ -307,6 +307,8 @@ local function setCustomGunMod(gun)
     gunSettings.EShieldDamage = 1000
     gunSettings.gunRecoilMin = 0
     gunSettings.gunRecoilMax = 0
+    gunSettings.AimKickbackMin = 3
+    gunSettings.AimKickbackMax = 5
     gunSettings.KickbackMin = 0
     gunSettings.KickbackMax = 0
     gunSettings.CamShakeMin = 0
