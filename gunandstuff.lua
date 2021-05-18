@@ -247,7 +247,8 @@ FOVring.Color = Color3.fromRGB(255, 128, 128)
 FOVring.Position = workspace.CurrentCamera.ViewportSize/2
 
 local function teamCheck()
-    return v.Team == game.Players.LocalPlayer.Team
+    --return v.Team == game.Players.LocalPlayer.Team
+    return false
 end
 
 local function getClosest(cframe)
@@ -318,7 +319,7 @@ local function setCustomGunMod(gun)
     gunSettings.Ammo = math.huge
     gunSettings.AntiTK = false
     gunSettings.TracerEnabled = false
-    gunSettings.Firerate = 10
+    gunSettings.Firerate = .2
     gunSettings.ExplosiveEnabled = true
     gunSettings.ExplosiveAmmo = math.huge
     print('yuh')
