@@ -314,9 +314,13 @@ local function setCustomGunMod(gun)
     gunSettings.CamShakeMin = 0
     gunSettings.CamShakeMax = 0
     gunSettings.TracerLifetime = 1000
-    gunSettings.BulletSpeed = 10000000
-    gunSettings.Ammo = 1000000
+    gunSettings.BulletSpeed = math.huge
+    gunSettings.Ammo = math.huge
+    gunSettings.AntiTK = false
     gunSettings.TracerEnabled = false
+    gunSettings.Firerate = 10
+    gunSettings.ExplosiveEnabled = true
+    gunSettings.ExplosiveAmmo = math.huge
     print('yuh')
 end
 
