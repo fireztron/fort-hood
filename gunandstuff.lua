@@ -306,6 +306,11 @@ local function setCustomGunMod(gun)
     gunSettings.ArmorDamage = 1000
     gunSettings.HeadDamage = 1000
     gunSettings.EShieldDamage = 1000
+	
+    gunSettings.SideKickMin = -3.5
+    gunSettings.SideKickMax = 3.5
+    gunSettings.AimSideKickMin = -2.5
+    gunSettings.AimSideKickMax = 2.5
     gunSettings.gunRecoilMin = 0
     gunSettings.gunRecoilMax = 0
     gunSettings.AimKickbackMin = 3
@@ -314,6 +319,9 @@ local function setCustomGunMod(gun)
     gunSettings.KickbackMax = 0
     gunSettings.CamShakeMin = 0
     gunSettings.CamShakeMax = 0
+    gunSettings.AimCanShakeMin = 3
+    gunSettings.AimCamShakeMax = 4
+	
     gunSettings.TracerLifetime = 1000
     gunSettings.BulletSpeed = math.huge
     gunSettings.Ammo = math.huge
