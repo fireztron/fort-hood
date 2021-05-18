@@ -13,3 +13,28 @@ while wait() and _G.z do
         end
     end
 end
+
+
+--[[
+loop bring all
+
+_G.z = true
+
+
+while wait() and _G.z do 
+    for i,v in pairs(game.Players:GetPlayers()) do
+    if v ~= game.Players.LocalPlayer then
+    local plrName = v.Name
+    local char = game.Players[plrName].Character
+    local LPChar = game.Players.LocalPlayer.Character
+    if char and LPChar then
+        local hum = char:FindFirstChild("HumanoidRootPart")
+        local LPhum = LPChar:FindFirstChild("HumanoidRootPart")
+        if hum and LPhum then
+            hum.CFrame = LPhum.CFrame * CFrame.new(0,0,-5)
+        end
+    end
+    end
+    end
+end
+--]]
