@@ -158,7 +158,7 @@ end
 
 local function createHealthbar(player)
 	--print("healthing " .. player.Name)
-	local hrp = player.Character.HumanoidRootPart
+	local hrp = player.Character:WaitForChild("HumanoidRootPart")
 	board =Instance.new("BillboardGui", hrp) --//Creates the BillboardGui with HumanoidRootPart as the Parent
 	board.Name = "total"
 	board.Size = UDim2.new(1,0,1,0)
