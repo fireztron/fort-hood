@@ -314,6 +314,7 @@ local function setCustomGunMod(gun)
     gunSettings.TracerLifetime = 1000
     gunSettings.BulletSpeed = 10000000
     gunSettings.Ammo = 1000000
+    gunSettings.TracerEnabled = false
     print('yuh')
 end
 
