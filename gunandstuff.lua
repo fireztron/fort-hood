@@ -247,8 +247,8 @@ FOVring.Color = Color3.fromRGB(255, 128, 128)
 FOVring.Position = workspace.CurrentCamera.ViewportSize/2
 
 local function teamCheck()
-    --return v.Team == game.Players.LocalPlayer.Team
-    return false
+    return v.Team == game.Players.LocalPlayer.Team
+    --return false
 end
 
 local function getClosest(cframe)
