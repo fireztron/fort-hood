@@ -17,7 +17,6 @@ end
 
 --[[
 loop bring all
-
 _G.z = true
 
 
@@ -31,7 +30,7 @@ while wait() and _G.z do
         local hum = char:FindFirstChild("HumanoidRootPart")
         local humanoid = char:FindFirstChild("Humanoid")
         local LPhum = LPChar:FindFirstChild("HumanoidRootPart")
-        if hum and LPhum and humanoid and humanoid.Health > 0 and not char:FindFirstChild("ForecField") then
+        if hum and LPhum and humanoid and humanoid.Health > 0 and not char:FindFirstChild("ForceField") then
             hum.CFrame = LPhum.CFrame * CFrame.new(0,0,-5)
         end
     end
