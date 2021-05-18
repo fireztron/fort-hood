@@ -327,7 +327,7 @@ local function setCustomGunMod(gun)
     gunSettings.Ammo = math.huge
     gunSettings.AntiTK = false
     gunSettings.TracerEnabled = false
-    gunSettings.Firerate = .001
+    gunSettings.Firerate = .01
     gunSettings.ExplosiveEnabled = true
     gunSettings.ExplosiveAmmo = math.huge
     print('yuh')
