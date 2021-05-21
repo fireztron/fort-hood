@@ -1,0 +1,52 @@
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local function GetClosestEnemyChar()
+    local Character = LocalPlayer.Character
+    local HumanoidRootPart = Character and Character:FindFirstChild("HumanoidRootPart")
+    if not (Character or HumanoidRootPart) then return end
+
+    local TargetDistance = math.huge
+    local Target
+
+    for i,v in ipairs(Players:GetPlayers()) do
+        if v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
+            if v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health > 0 and not v.Character:FindFirstChild("ForceField") then
+                local TargetHRP = v.Character.HumanoidRootPart
+                local mag = (HumanoidRootPart.Position - TargetHRP.Position).magnitude
+                if mag < TargetDistance then
+                    TargetDistance = mag
+                    Target = v
+                end
+            end
+        end
+    end
+
+    return Target.Character
+end
+
+
+local shitty;
+shitty = hookfunction(getrawmetatable(game).__namecall, newcclosure(function(Event, ...)
+    local args = {...};
+    if not checkcaller() then
+        if getnamecallmethod() == "FireServer" and tostring(Event) == "Damage" and typeof(args[2]) == "table" then
+            if typeof(args[2][1]) == "Instance" then
+                local char = GetClosestEnemyChar()
+                if char and char:FindFirstChild("HumanoidRootPart") then
+                    args[2][1] = char:FindFirstChild("Left Leg")
+                    args[2][2] = char:FindFirstChild("Right Leg")
+                    args[2][3] = char:FindFirstChild("HumanoidRootPart")
+                    args[4] = char.PrimaryPart.Position
+                    args[6] = 1000
+                else
+                    print("could not find a valid char.")
+                end
+            end
+        end
+    end
+    return shitty(Event, unpack(args))
+end))
+
+
+print("ran")
