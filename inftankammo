@@ -1,0 +1,39 @@
+for _,s in pairs(workspace:GetDescendants()) do
+        if s:IsA("NumberValue") and (s.Name == "APHEAmmo" or s.Name == "SmokeAmmo" or s.Name == "Slot3Ammo" or s.Name == "ExplosionDamageFactor") then
+            print("Found")
+            s.Value = 9e9
+            s.Changed:Connect(function()
+                s.Value = 9e9
+            end)
+        elseif s:IsA("NumberValue") and (s.Name == "ShellLoadTime" or s.Name == "RecoilFactor") then
+            s.Value = 0
+            s.Changed:Connect(function()
+                s.Value = 0
+            end)
+        end
+    end
+--    end
+--end)
+
+workspace.DescendantAdded:Connect(function(s)
+    if s:IsA("NumberValue") and (s.Name == "APHEAmmo" or s.Name == "SmokeAmmo" or s.Name == "Slot3Ammo" or s.Name == "ExplosionDamageFactor") then
+            print("Found")
+            s.Value = 9e9
+            s.Changed:Connect(function()
+                s.Value = 9e9
+            end)
+        elseif s:IsA("NumberValue") and (s.Name == "ShellLoadTime" or s.Name == "RecoilFactor") then
+            s.Value = 0
+            s.Changed:Connect(function()
+                s.Value = 0
+            end)
+        end
+end)
+
+local part = Instance.new("Part")
+part.Anchored = true
+part.Size = Vector3.new(9e9, 3, 9e9)
+part.Position = Vector3.new(-145.316, -60, -722.699)
+part.CanCollide = true
+part.Parent = workspace
+part.Color = Color3.fromRGB(255,0,0)
